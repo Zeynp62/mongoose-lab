@@ -22,7 +22,8 @@ const checkInput = async () => {
   userChoice = prompt('What is your choice?') // Move the prompt inside the function
   if (userChoice === '3') {
     console.log('Below is a list of customers:')
-    findTodos()
+    const todos = await Todo.find()
+    console.log('All: ', todos)
     const idInput = prompt(
       'Copy and paste the id of the customer you would like to update here:'
     )
